@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learn Geography</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+</head>
+<body>
+  <div id = "header">
+	<div class="shadow-picture">
+	  <div class="title-container">
+		  <img src="assets/logo.png" alt="logo" class="logo">
+		 
+	  </div>
+	  
+	   <img src = "assets/airplane.png" alt="airplane" class="airplane">
+	    <div class="airplane-list">
+	    <div class="cities-choose">
+			 <input type = "text" placeholder ="from" onfocus="this.placeholder = ''" onblur="this.placeholder = 'from'">
+			  <input type = "text" placeholder ="to" onfocus="this.placeholder = ''" onblur="this.placeholder = 'to'">
+		</div>
+	</div>
+	</div>
+	
+  </div>	   
+  
+</body>
+<script>
+	window.addEventListener('load', function () {
+     document.getElementsByClassName("airplane")[0].classList.add("airplane2");
+})  
+</script>
+ 
+  
+</html>

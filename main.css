@@ -1,0 +1,140 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+#header{
+	width: 100%;
+	height: 600px;
+	background-image: url(assets/new-york.jpg);
+	background-repeat:  no-repeat;
+	 background-position: center;
+	 background-size: 100% 100%;
+	
+}
+.shadow-picture{
+	width: 100%;
+	height: 100%;
+	background: hsla(0, 0%, 25%, 0.5);
+	position: relative;
+}
+.title-container{
+	width: 100%;
+	height: 70px;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: hsla(220, 100%, 25%, 0.3);
+	box-shadow: 10px 10px 40px hsla(0, 0%, 10%, 0.4);
+	text-align: center;
+	
+  
+}
+.logo{
+	width: 300px;
+	height: 80%;
+	padding-top: 0.5rem;
+	
+}
+
+/*//////////////////////////////////////////////////////////////////AIRPLANE-ANIMATION/////////////////////////////////////////////////*/
+.airplane2{
+	
+	position: absolute;
+	top: 0;
+	
+	left: -10%;
+	z-index: 1;
+	-webkit-animation-name: airplaneAnimation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  animation-name: airplaneAnimation;
+  animation-duration: 1s;
+}
+@-webkit-keyframes airplaneAnimation  {
+  10% {left: -70%}
+  60% {left: -10%;}
+}
+
+
+@keyframes airplaneAnimation {
+   10% {left: -70%}
+   60% {left: -10%}
+}
+.airplane-list{
+	width: 40%;
+	height: 60%;
+    background: hsla(0, 0%, 90%, 0.9);
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	 transform: translate(-50%, -50%);
+	
+}
+.cities-choose{
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	display: flex;
+	
+	height: 20%;
+	
+	
+}
+.cities-choose input{
+	width: 50%;
+	height: 80%;
+	font-size: 20px;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	margin: 5px;
+	color: hsl(0, 0%, 30%);
+	padding: 5px;
+	
+	
+}
+
+/*////////////////////////////////////////////////////////////Media-Queries////////////////////////////////////////////////////////////////////*/
+@media(max-width: 1200px){
+	#header{
+		height: 400px;
+	}
+	.airplane2{
+	width: 30%;
+	height; 20%;
+	top: 5%;	
+	}
+}
+@media(max-width: 700px){
+	.airplane-list{
+	width: 50%;
+		
+	}
+}
+@media(max-width: 500px){
+	#header{
+		height: 300px;
+	}
+	
+	.airplane{
+		display: none;
+	}
+	.title-container{
+		height: 50px;
+		
+	}
+	.cities-choose{
+		display: block;
+	}
+	.cities-choose input{
+		
+		width: 90%;
+		
+		
+	}
+}
+
