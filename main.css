@@ -19,6 +19,16 @@
 	background: hsla(0, 0%, 25%, 0.5);
 	position: relative;
 }
+.shadow-picture2{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	background: /*hsla(0, 0%, 25%, 0.7)*/ transparent;
+	
+	
+}
 .title-container{
 	width: 100%;
 	height: 70px;
@@ -73,18 +83,26 @@
 	 transform: translate(-50%, -50%);
 	
 }
-.cities-choose{
+.cities-choose, .date-choose{
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
 	display: flex;
+	flex-direction: row;
+	
 	
 	height: 20%;
-	
+	position: relative;
 	
 }
-.cities-choose input{
+.date-choose{
+	
+}
+.date-choose input{
+	cursor: pointer;
+}
+.cities-choose input, .date-choose input{
 	width: 50%;
 	height: 80%;
 	font-size: 20px;
@@ -96,6 +114,31 @@
 	padding: 5px;
 	
 	
+	
+}
+.cities-list{
+	width: 100%;
+	height: auto;
+	background: hsla(0, 0%, 100%);
+	position: absolute;
+	top: 90%;
+	left: 0;
+	z-index: 1;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+	
+}
+.cities-list li{
+	font-size: 1rem;
+	padding: 0.5rem;
+	color: hsl(0, 0%, 25%);
+	width: 100%;
+	cursor: pointer;
+	display: none;
+	
+}
+.cities-list li:hover{
+	background: hsla(0, 0%, 65%, 0.6);
 }
 
 /*////////////////////////////////////////////////////////////Media-Queries////////////////////////////////////////////////////////////////////*/
@@ -117,7 +160,7 @@
 }
 @media(max-width: 500px){
 	#header{
-		height: 300px;
+		height: 400px;
 	}
 	
 	.airplane{
@@ -127,14 +170,31 @@
 		height: 50px;
 		
 	}
-	.cities-choose{
-		display: block;
+	.airplane-list{
+	width: 80%;
+	
 	}
-	.cities-choose input{
+	.cities-choose, .date-choose{
+		flex-direction: column;
+		height: 40%;
 		
-		width: 90%;
+	}
+	.data-choose{
+		
+	}
+	.cities-choose input, .date-choose input{
+		
+		width: 95%;
+		box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
 		
 		
+		
+	}
+	.cities-list{
+		top: 55%;
+	}
+	.cities-list-bottom-mobile{
+		top: 95%;
 	}
 }
 
