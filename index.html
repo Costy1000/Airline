@@ -6,15 +6,22 @@
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">	
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">	
-<!--<link rel="stylesheet" href="/resources/demos/style.css">---->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+<!---<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">	--->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
+<link rel="stylesheet" href="/resources/demos/style.css">
+  <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->	
 <script src="script.js"></script>
+<script src="script3.js"></script>	
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 </head>
+	<script>
+</script>
 <body>
+ 
   <div id = "header">
+	
 	<div class="shadow-picture ">
 	  <div class="title-container">
 		  <img src="assets/logo.png" alt="logo" class="logo">
@@ -38,21 +45,106 @@
 		
 			
 		<div class="date-choose">
-			 <input id="datepicker" type = "text" placeholder ="Outgoing" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Outgoing'">
-			  <input id="datepicker2" type = "text" placeholder ="Return" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return'">
+			 <input id="datepicker" type = "button" value ="Outgoing" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Outgoing'">
+			  <input id="datepicker2" type = "button" value ="Return" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return'">
 			
 		</div>
-		
+		<div class="passenger-search">
+			<div class="passenger">
+				<div class="passenger-man">
+					<img src="assets/avatar-man.jpg" alt="avatar-man">
+					<span class="span-adult">1</span>
+				</div>
+				<div class="passenger-separator"></div>
+				<div class="passenger-child">
+					<img src="assets/avatar-child.png" alt="avatar-child">
+					<span class="span-child">0</span>
+				</div>
+				<div class="passenger-separator"></div>
+				<div class="passenger-baby">
+					<img src="assets/avatar-baby.png" alt="avatar-baby">
+					<span class="span-baby">0</span>
+				</div>
+				
+			</div>
+			<div class="search">
+				<p class="search-p">Search</p>
+			</div>
+		    
 		</div>
+	    
+		
+  	 </div>
+		</div>
+		</div>
+	  <div class="shadow-picture3">
+		<div class="passenger-choose">
+		     
+			<div class="passenger-title"><h2>Passengers</h2></div>
+			<div class="passenger-options">
+			 
+			 
+			 <div class="passenger-option-man">
+				 <h3>Adults(+14)</h3>
+				<button class="minus-adult">-</button>
+				<img src="assets/avatar-man.jpg" alt="avatar-man">
+				<button class="plus-adult">+</button>
+				<span class="span-adult">1</span>
+			</div>
+			 <div class="passenger-option-child">
+				 <h3>Child(4-14)</h3>
+				<button class="minus-child">-</button>
+				<img src="assets/avatar-child.png" alt="avatar-child">
+				<button class="plus-child">+</button>
+				<span class="span-child">0</span>
+			</div>
+			 <div class="passenger-option-baby">
+				 <h3>Baby(0-4)</h3>
+				<button class="minus-baby">-</button>
+				<img src="assets/avatar-baby.png" alt="avatar-baby">
+				<button class="plus-baby">+</button>
+				<span class="span-baby">0</span>
+			</div>	
+			</div>	
+			<button class="ok">OK</button>
+	    </div> 
 	</div>
+	</div>
+	<div class="main">
+	<div class="shadow-picture shadow-flex  ">
+	<div class="prev-button">
+		  <button>&#10094;</button>
+		</div>	
+	<div class="first-city-wrapper">
+	   
+	   <div class="cities-wrapper cities-wrapper-opacity" >
+	   </div>
+	    <div class="cities-wrapper">
+	   </div>
+	</div>
+	<div class="next-button">
+	     <button>&#10095;</button>	
+		</div>
+     </div>
+	
+	
+	
+	
+		
 	</div>
 	
-  </div>	   
-  
+	<div class="load-more">
+		<p class="load">Load More</p>
+		<p class="hide">Hide</p>
+	</div>
+	<!---<div class="footer"></div>--->
+  <script src="script2.js"></script>	
+  <script src="script3.js"></script>	
 </body>
 <script>
 	window.addEventListener('load', function () {
      document.getElementsByClassName("airplane")[0].classList.add("airplane2");
+		
 })
 $( function() {
     $( "#datepicker, #datepicker2" ).datepicker();

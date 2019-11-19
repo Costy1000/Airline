@@ -4,38 +4,58 @@
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 }
-#header{
+body{
 	width: 100%;
+	height: 100%;
+}
+#header,.shadow-picture,.shadow-picture2, .title-container, .cities-choose, .date-choose,.passenger-choose, .passenger-choose img, .cities-list{
+width: 100%;	
+}
+
+#header{
+	
 	height: 600px;
 	background-image: url(assets/new-york.jpg);
 	background-repeat:  no-repeat;
 	 background-position: center;
 	 background-size: 100% 100%;
 	
+	
+}
+#header, .shadow-picture, .shadow-picture2, .title-container, .cities-choose, .date-choose, .passenger-left{
+	position: relative;
 }
 .shadow-picture{
-	width: 100%;
+	
 	height: 100%;
 	background: hsla(0, 0%, 25%, 0.5);
-	position: relative;
+	
 }
 .shadow-picture2{
-	width: 100%;
+	
 	height: 100%;
-	position: relative;
 	top: 0;
 	left: 0;
-	background: /*hsla(0, 0%, 25%, 0.7)*/ transparent;
+	background: transparent
 	
 	
 }
-.title-container{
+.shadow-picture3{
 	width: 100%;
-	height: 70px;
-	position: relative;
+	position: absolute;
+	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	background:hsla(0, 0%, 25%, 0.8);
+	z-index: 1;
+	display: none;
+}
+.title-container{
+	
+	height: 70px;
+	top: 0;
+	left: 0;
+	
 	background: hsla(220, 100%, 25%, 0.3);
 	box-shadow: 10px 10px 40px hsla(0, 0%, 10%, 0.4);
 	text-align: center;
@@ -50,13 +70,16 @@
 }
 
 /*//////////////////////////////////////////////////////////////////AIRPLANE-ANIMATION/////////////////////////////////////////////////*/
+.airplane{
+	
+}
 .airplane2{
 	
 	position: absolute;
 	top: 0;
 	
-	left: -10%;
-	z-index: 1;
+	left: -150px;
+	
 	-webkit-animation-name: airplaneAnimation; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
   animation-name: airplaneAnimation;
@@ -64,18 +87,19 @@
 }
 @-webkit-keyframes airplaneAnimation  {
   10% {left: -70%}
-  60% {left: -10%;}
+  60% {left: -150px}
 }
 
 
 @keyframes airplaneAnimation {
    10% {left: -70%}
-   60% {left: -10%}
+   60% {left: -150px}
 }
 .airplane-list{
-	width: 40%;
-	height: 60%;
-    background: hsla(0, 0%, 90%, 0.9);
+	width: 700px;
+	height: 300px;
+	z-index: 1;
+    background: hsl(0, 0%, 85%);
 	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
 	position: absolute;
 	top: 50%;
@@ -84,7 +108,7 @@
 	
 }
 .cities-choose, .date-choose{
-	width: 100%;
+	
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
@@ -92,17 +116,20 @@
 	flex-direction: row;
 	
 	
-	height: 20%;
-	position: relative;
+	
+	height: 30%;
+	
 	
 }
-.date-choose{
-	
-}
+
 .date-choose input{
 	cursor: pointer;
+	background: white;
+	text-align: left;
+	color: hsl(0, 0%, 30%);
+	
 }
-.cities-choose input, .date-choose input{
+.cities-choose input, .date-choose  input{
 	width: 50%;
 	height: 80%;
 	font-size: 20px;
@@ -112,12 +139,12 @@
 	margin: 5px;
 	color: hsl(0, 0%, 30%);
 	padding: 5px;
-	
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
 	
 	
 }
 .cities-list{
-	width: 100%;
+	
 	height: auto;
 	background: hsla(0, 0%, 100%);
 	position: absolute;
@@ -140,26 +167,419 @@
 .cities-list li:hover{
 	background: hsla(0, 0%, 65%, 0.6);
 }
+.passenger-search{
+	width: 100%;
+	height: 20%;
+	
+}
+.passenger, .search{
+	width: 40%;
+	height: 100%;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+.passenger{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	float: left
+}
+.passenger-man, .passenger-child, .passenger-baby{
+	width: 3rem;
+	height: 100%;	
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+.passenger-search img{
+	width: 100%;
+	height: 60%;
+}
+.passenger-search span{
+    text-align: center;
+	display: block;
+}
+.passenger-separator{
+	width: 0.5%;
+	height: 100%;
+	background: hsl(0, 0%, 65%);
+}
+
+.search{
+	background: green;
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search-p{
+	
+	color: white;
+	font-size: 1.4rem;
+	
+}
+.passenger-choose{
+	width: 500px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	 
+	background: white;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+	
+}
+.passenger-title{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.passenger-options{
+	width: 100%;
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+.passenger-options button{
+	width: 50px;
+	height: 30px;
+	background: white;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%);
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.passenger-options h3{
+	position: absolute;
+	left: 1%;
+	font-size: 1rem;
+}
+.passenger-options span{
+	position: absolute;
+	right: 10%;
+}
+.passenger-option-man, .passenger-option-child, .passenger-option-baby{
+	width: 90%;
+	height: 30%;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.passenger-option-man img, .passenger-option-child img, .passenger-option-baby img
+{
+	width: 3.5rem;
+	height: 80%;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	
+}
+.ok{
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 1rem;
+	display: block;
+	background: green;
+	color: white;
+	padding: 5px;
+	width: 100px;
+	height: 30px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%);
+}
+  /*//////////////////////////////////////////////////////////////////////////main/////////////////////////////////////////////////////////////////*/
+.main{
+	width: 100%;
+	background-image: url(assets/world2.jpg);
+	
+	background-repeat:  no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+
+
+.shadow-flex{
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	
+	
+}
+.footer{
+	width: 100%;
+	height: 500px;
+	background: red;
+}
+.first-city-wrapper{
+	width: 90%;
+	height: 100%;
+	
+	
+}
+
+
+.cities-wrapper{
+	
+	width: 100%;
+	height: 100%;
+	padding-top: 0.8rem;
+	padding-bottom: 0.8rem;
+	transition: opacity 0.2s;
+    opacity: 0;
+	display: none;
+}
+
+.cities-wrapper-opacity{
+	/*opacity: 1;*/
+	display: block;
+	opacity: 1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-around;
+	
+	z-index: 1;
+	animation-name: cities-opacity;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+@-webkit-keyframes cities-opacity  {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+@keyframes cities-opacity  {
+ 0% {opacity: 0}
+ 100% {opacity: 1}
+}
+.city-wrapper{
+	width:  350px;
+	height: 200px;
+	background: white;
+	box-shadow: 0px 0px 10px hsla(0, 0%, 10%);
+	display: block;
+	position: relative;
+	cursor: pointer;
+	margin: 1rem;
+}
+
+
+.city-img-wrapper{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: height 0.2s;
+}
+.city-img-wrapper-hover{
+	height: 80%;
+	transition: height 0.2s;
+}
+.city-img-wrapper img{
+	width: 100%;
+	height: 100%;
+}
+.price-wrapper{
+	width: 100%;
+	height: 20%;
+	padding: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	
+	
+}
+.location{
+	float: left;
+	font-size: 1.3rem;
+}
+.price{
+    float: right;
+	font-size: 1.2rem;
+}
+
+.prev-button, .next-button{
+	color: white;
+	
+	width: 5%;
+	padding: 10px;
+	background: hsla(0, 0%, 10%, 0.6);
+	min-height: 100%;
+	position: relative;
+   
+}
+
+.prev-button button, .next-button button{
+	position: absolute;
+	top: 50%;
+	/*left: 50%;*/
+	 transform: translate(-50%, -50%);
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1.5rem;
+	padding: 10px;
+	cursor: pointer;
+	color: white;
+	
+}
+.prev-button button{
+	left: 100%;
+	background: hsla(0, 0%, 10%, 0.9);
+	border-radius: 10px;
+	padding: 15px;
+	z-index: 2;
+}
+.next-button button{
+	left: 10%;
+	background: hsla(0, 0%, 10%, 0.9);
+	border-radius: 10px;
+	padding: 15px;
+	z-index: 2;
+}
+.load-more{
+	display: none;
+}
+
+
+
+
+
+
 
 /*////////////////////////////////////////////////////////////Media-Queries////////////////////////////////////////////////////////////////////*/
-@media(max-width: 1200px){
-	#header{
-		height: 400px;
-	}
+@media(max-width: 1340px){
 	.airplane2{
-	width: 30%;
-	height; 20%;
-	top: 5%;	
-	}
-}
-@media(max-width: 700px){
-	.airplane-list{
-	width: 50%;
+	left: -250px;
 		
 	}
+@-webkit-keyframes airplaneAnimation  {
+  10% {left: -70%}
+  60% {left: -250px}
 }
-@media(max-width: 500px){
-	#header{
+
+
+@keyframes airplaneAnimation {
+   10% {left: -70%}
+   60% {left: -250px}
+}	
+}
+@media(max-width: 1300px){
+	
+	.cities-wrapper-opacity{
+		
+		justify-content: center;
+		
+		
+	}	
+	.city-wrapper{
+		width: 46%;
+		height: 250px;
+		
+	}
+	
+}
+
+
+@media(max-width: 900px){
+	
+.cities-wrapper-opacity{
+		
+		justify-content: center;
+		
+		
+	}
+	.city-wrapper{
+		width: 90%;
+		height: 300px;
+		
+	}
+	.load-more{
+		width: 100%;
+		height: 3rem;
+		background: red;
+		display: block;
+		display: flex;
+		flex-direction: row;
+	}
+	/*.prev-button button, .next-button button{
+		position: fixed;
+		
+	}*/
+	/*.next-button button{
+		right: 0;
+	}*/
+	.load, .hide{
+		
+		height: 100%;
+		text-align: center;
+		padding: 0.5rem;
+		cursor: pointer;
+		background: hsl(240, 20%, 55%);
+	}
+	.load{
+		width: 100%;
+		border-right: 3px solid hsl(0, 0%, 25%);
+		
+	}
+	.hide{
+		width: 50%;
+	 	display: none;
+		
+		
+	}
+	.city-wrapper{
+		display: none;
+	}
+
+}
+
+@media(max-width: 800px){
+	.airplane-list{
+		 width:  500px;
+		height: 250px;
+		
+	}
+	.cities-choose, .date-choose{
+		height: 30%;
+	}
+	.passenger-search{
+	
+	height: 25%;
+	
+}
+	.passenger, .search{
+	width: 45%;
+		height: 100%;
+	}
+}
+
+@media(max-width: 600px){
+	
+	.airplane-list{
+		width: 95%;
 		height: 400px;
 	}
 	
@@ -170,25 +590,15 @@
 		height: 50px;
 		
 	}
-	.airplane-list{
-	width: 80%;
 	
-	}
 	.cities-choose, .date-choose{
 		flex-direction: column;
-		height: 40%;
-		
+		height: 30%;	
 	}
-	.data-choose{
-		
-	}
-	.cities-choose input, .date-choose input{
-		
+	
+	.cities-choose input, .date-choose input{	
 		width: 95%;
 		box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
-		
-		
-		
 	}
 	.cities-list{
 		top: 55%;
@@ -196,5 +606,82 @@
 	.cities-list-bottom-mobile{
 		top: 95%;
 	}
+	.passenger-search{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
+		
+	height: 40%;	
 }
+	.passenger{
+	justify-content: center;
+		
+}
+	.passenger, .search{
+	width: 250px;
+	min-width: 200px;
+	height: 50%;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	
+}
+	.passenger-man, .passenger-child, .passenger-baby{
+	width: 30%;
+	
+}
+	.passenger-choose{
+		position: fixed;
+	    width: 100%;
+		height: 100%;
+		top: 0%;
+		left: 0%;
+		transform: none;
+      
+	}
+	.passenger-options{
+	width: 100%;
+	height: 40%;
+	
+	
+	
+}
+	.passenger-option-man, .passenger-option-child, .passenger-option-baby{
+	width: 300px;
+	height: 60px;
+	}
+	.passenger-options h3{
+	
+	font-size: 0.8rem;
+}
+	.passenger-options button{
+		width: 20px;
+		height: 20px;
+	}
+	.first-city-wrapper{
+	width: 99%;
+	
+	
+	
+	}
+	.prev-button, .next-button{
+		width: 0.5%;
+		background: transparent;
+	}
+	.city-img-wrapper{
+	
+	height: 82%;
+	}
+	.price-wrapper{
+	
+	height: 18%;
+	opacity: 1 !important;	
+	}
 
+	.city-wrapper{
+		height: 200px;
+	}
+	
+
+
+}
