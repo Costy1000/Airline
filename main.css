@@ -7,6 +7,7 @@
 body{
 	width: 100%;
 	height: 100%;
+	
 }
 #header,.shadow-picture,.shadow-picture2, .title-container, .cities-choose, .date-choose,.passenger-choose, .passenger-choose img, .cities-list{
 width: 100%;	
@@ -19,7 +20,7 @@ width: 100%;
 	background-repeat:  no-repeat;
 	 background-position: center;
 	 background-size: 100% 100%;
-	
+
 	
 }
 #header, .shadow-picture, .shadow-picture2, .title-container, .cities-choose, .date-choose, .passenger-left{
@@ -57,7 +58,7 @@ width: 100%;
 	left: 0;
 	
 	background: hsla(220, 100%, 25%, 0.3);
-	box-shadow: 10px 10px 40px hsla(0, 0%, 10%, 0.4);
+	box-shadow: 0px 0px 40px #000000;
 	text-align: center;
 	
   
@@ -65,8 +66,143 @@ width: 100%;
 .logo{
 	width: 300px;
 	height: 80%;
+	margin: 0.2rem;
 	padding-top: 0.5rem;
+	float: left;
+}
+.button-list{
 	
+	height: 100%;
+	float: right;
+	
+	
+}
+.save{
+	position: relative;
+}
+.span-one{
+	width: 20px;
+	height: 20px;
+	display: none;
+	text-align: center;
+	overflow: hidden;
+	font-size: 14px;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	background: red;
+	border-radius: 50%;
+}
+.button-list button{
+	height: 100%;
+	padding: 1rem;
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: 'Alata', sans-serif;
+	color: hsl(0, 0%, 85%);
+	text-shadow: 2px 2px black;
+}
+.button-list button:hover{
+	background: hsl(210, 50%, 35%);
+	
+}
+.content-bar, .content-bar-black{
+	
+	display: none;
+}
+.slider-container{
+	width: 100%;
+	height: 90%;
+	
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.slider-container img{
+    width: 100%;
+  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	
+}
+ .shadow-picture-slider, .shadow-picture-slider2{
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	width: 100%;
+	height: 100%;
+	
+	
+}
+.shadow-picture-slider{
+	background: hsla(0, 0%, 0%, 0.2) ;
+}
+
+.shadow-picture-slider2-block{
+	animation: shadowSlider 0.5s linear backwards  ;
+}
+@keyframes  shadowSlider {
+	from{ background: hsla(0, 0%, 0%, 0.8);}
+	to { background: transparent;}
+}
+/*@-o-keyframes bb {
+	from{ background: black;}
+	to { background: transparent;}
+}
+@-moz-keyframes  bb {
+	from{ background: black;}
+	to { background: transparent;}
+}
+@-webkit-keyframes  bb {
+	from{ background: black;}
+	to { background: transparent;}
+}*/
+.img-block{
+	display: block !important;
+}
+
+.prev-header, .next-header {
+  /*position: absolute;
+	 top: 50%;
+	 cursor: pointer;
+	font-size: 70px !important;
+    color: blue;
+	transform: rotate(-130deg);*/
+	
+	
+	width: 3%;
+	height: 10%;
+	padding: 15px;
+	background: hsla(0, 0%, 10%, 0.6);
+	color: white;
+	font-size: 1.5rem;
+	outline: none;
+	cursor: pointer;
+	padding: 10px;
+	position:  absolute;
+	top: 40%;
+	border: none;
+	border-radius: 10px;
+}
+
+.prev-header button, .next-header button{
+	background: hsla(0, 0%, 10%, 0.9);
+	
+	padding: 15px;
+   z-index: 2;
+}
+.prev-header{
+	left: 1%;
+}
+
+.next-header {
+  right: 1% ;
 }
 
 /*//////////////////////////////////////////////////////////////////AIRPLANE-ANIMATION/////////////////////////////////////////////////*/
@@ -98,8 +234,7 @@ width: 100%;
 .airplane-list{
 	width: 700px;
 	height: 300px;
-	z-index: 1;
-    background: hsl(0, 0%, 85%);
+    background:  hsl(0, 0%, 100%);
 	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
 	position: absolute;
 	top: 50%;
@@ -134,12 +269,13 @@ width: 100%;
 	height: 80%;
 	font-size: 20px;
 	border-radius: 10px;
+	/*background: hsla(0, 0%, 65%, 0.6);*/
 	outline: none;
 	border: none;
 	margin: 5px;
 	color: hsl(0, 0%, 30%);
 	padding: 5px;
-	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+	box-shadow: 0px 0px 20px hsl(0, 0%, 15%);
 	
 	
 }
@@ -167,6 +303,37 @@ width: 100%;
 .cities-list li:hover{
 	background: hsla(0, 0%, 65%, 0.6);
 }
+.wrong-cities{
+	width: auto;
+	height: auto;
+	position: absolute;
+	padding: 10px;
+	line-height: 1.6;
+	white-space: nowrap;
+	font-size: 20px;
+	background: hsla(0, 0%, 95%, 1);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	display: none;
+	z-index: 1;
+}
+.wrong-cities p{
+	display: none;
+}
+
+.close-cities{
+	width: 100px;
+	height: auto;
+	padding: 10px;
+	border: none;
+	background: hsl(0, 100%, 75%);
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+}
 .passenger-search{
 	width: 100%;
 	height: 20%;
@@ -175,9 +342,9 @@ width: 100%;
 .passenger, .search{
 	width: 40%;
 	height: 100%;
-	background: white;
+	background: white  ;
 	border-radius: 10px;
-	box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+	box-shadow: 0px 0px 30px hsla(0, 0%, 25%, 0.9) ;
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 	cursor: pointer;
@@ -209,7 +376,7 @@ width: 100%;
 }
 
 .search{
-	background: green;
+	background: hsla(150, 100%, 35%, 0.7);
 	float: right;
 	display: flex;
 	align-items: center;
@@ -289,6 +456,14 @@ width: 100%;
 	margin-right: 1.5rem;
 	
 }
+.return{
+	pointer-events: none;
+	opacity: 0.5;
+}
+.return2{
+	pointer-events: auto;
+	opacity: 1;
+}
 .ok{
 	margin-right: auto;
 	margin-left: auto;
@@ -304,11 +479,379 @@ width: 100%;
 	cursor: pointer;
 	box-shadow: 0px 0px 10px hsla(0, 0%, 10%);
 }
+   /*////////////////////////////////////////////////////Circle-Anmation/////////////////////////////////////////////////////////////////////////////////*/
+.circle-shadow{
+	
+	
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	animation: shadowImage 0.5s linear forwards ;
+  -moz-animation: shadowImage  0.5s linear  forwards;
+  -o-animation: shadowImage  0.5s linear forwards;
+  -webkit-animation: shadowImage  0.5s linear  forwards;
+	
+}
+@keyframes  shadowImage {
+	from{ background: hsla(0, 0%, 15%, 0.7);}
+	to { background: transparent;}
+}
+@-o-keyframes  shadowImage {
+	from{ background: black;}
+	to { background: transparent;}
+}
+@-moz-keyframes  shadowImage {
+	from{ background: black;}
+	to { background: transparent;}
+}
+@-webkit-keyframes  shadowImage {
+	from{ background: black;}
+	to { background: transparent;}
+}
+       .circle-animation {
+	
+	width: 125px;
+	height: 125px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	 transform: translate(-50%, -50%);	
+     animation: circleOpacity 0.7s linear forwards ;  
+	-moz-animation: circleOpacity 0.7s linear forwards ;  
+	-o-animation: circleOpacity 0.7s linear forwards ;
+	-webkit-animation: circleOpacity 0.7s linear forwards ;  	   
+}
+@keyframes  circleOpacity {
+	from{ opacity: 1;}
+	to { opacity: 0;}
+}
+@-o-keyframes  circleOpacity {
+	from{ opacity: 1;}
+	to { opacity: 0;}
+}
+@-moz-keyframes  circleOpacity {
+	from{ opacity: 1;}
+	to { opacity: 0;}
+}
+@-webkit-keyframes  circleOpacity {
+	from{ opacity: 1;}
+	to { opacity: 0;}
+}
+
+.circle-right {
+	border: #3f85a3 solid 15px;
+	height: 100%;
+	width: 100%;
+	border-radius:120px;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	position: absolute;
+	transform: rotate(-45deg);
+	animation: rota2 0.5s linear forwards;
+  -moz-animation: rota2 0.5s linear;
+  -o-animation: rota2 0.5s linear;
+  -webkit-animation: rota2 0.5s linear;
+}
+
+@keyframes rota2 {
+	from{ transform:rotate(-225deg); opacity: 1}
+	to { transform: rotate(-45deg); opacity: 0;}
+}
+
+@-o-keyframes rota2 {
+	from{ transform:rotate(-225deg);}
+	to { transform: rotate(-45deg);}
+}
+
+@-moz-keyframes rota2 {
+	from{ transform:rotate(-225deg);}
+	to { transform: rotate(-45deg);}
+}
+@-webkit-keyframes rota2 {
+	from{ transform:rotate(-225deg);}
+	to { transform: rotate(-45deg);}
+}
+
+.circle-left {
+	border: #3f85a3 solid 15px;
+	height: 100%;
+	width: 100%;
+	border-radius:120px;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	transform: rotate(315deg);
+	animation: rota 0.5s linear forwards;
+  -o-animation: rota 0.5s linear;
+  -moz-animation: rota 0.5s linear;
+  -webkit-animation: rota 0.5s linear;
+}
+@keyframes rota {
+	from {transform: rotate(-45deg); opacity: 1 };
+	to { transform: rotate(315deg); opacity: 0};
+}
+@-o-keyframes rota {
+	from {transform: rotate(-45deg);}
+	to { transform: rotate(315deg);}
+}
+/*@moz-keyframes rota {
+	from {transform: rotate(-45deg);}
+	to { transform: rotate(315deg);}
+}*/
+@-webkit-keyframes rota {
+	from {transform: rotate(-45deg);}
+	to { transform: rotate(315deg);}
+}
+    
+
+.ticket-wrapper, .ticket-wrapper-storage{
+	width: 100%;
+	height: 100%;
+	/*background:  hsl(0, 0%, 100%);*/
+	background-image: url(assets/flight.jpeg);
+	
+	background-repeat:  no-repeat;
+	 background-position: center;
+	 background-size: 100% 100%;
+    
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	
+	
+}
+.no-ticket{
+	width: 400px;
+	height: auto;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 20px;
+		background:  hsla(0, 0%, 95%, 0.9);
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	
+}
+.back{
+	width: auto;
+	height: auto;
+	position: absolute;
+	left: 2%;
+	top: 2%;
+	padding: 10px;
+		background:  hsla(0, 0%, 95%, 0.9);
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+}
+.back i{
+	font-size: 30px;
+}
+.shadow-ticket{
+	background: hsla(0, 0%, 20%, 0.6);
+}
+.ticket-wrapper2{
+	width: 900px;
+	height: 500px;
+	
+	
+	
+	
+}
+.tickets-airplane{
+	width: 100%;
+	height:  90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	
+	
+}
+
+.button-save, .button-delete{
+	width: 30%;
+	height: 10%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	display: block ;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+	background:  hsla(0, 0%, 95%, 0.9);
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	cursor: pointer !important;
+	outline: none;
+	border: none;
+}
+.ticket-wrapper > .button-save{
+	cursor: pointer !important;
+}
+.button-delete{
+    display: none;
+}
+
+
+.ticket-outgoing, .ticket-return{
+	
+	width: 40%;
+	height: 100%;
+	
+	position: relative;
+}
+.ticket-name-outgoing, .ticket-name-return{
+	width: 60%;
+	height: 12%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px;
+	background:  hsla(0, 0%, 95%, 0.9);
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	margin-bottom: 1rem;
+	
+}
+.ticket-outgoing-details, .ticket-return-details{
+	width: 100%;
+	height: 88%;
+	background:  hsla(0, 0%, 95%, 0.9);
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	
+}
+
+.ticket-date-outgoing , .ticket-date-return{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: row;
+	border-bottom:  4px groove hsl(0, 0%, 80%);
+}
+.date-outgoing, .hour-outgoing, .date-return, .hour-return{
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	padding: 0.5rem;
+}
+/*. {
+	padding: 1rem;
+}*/
+.ticket-road-outgoing, .ticket-road-return{
+	width: 100%;
+	height: 60%;
+	
+	text-align-last: center;
+	list-style-type: none;
+	padding: 1rem;
+	
+	/*box-shadow: 0px 3px 10px hsla(0, 0%, 10%);*/
+}
+
+.ticket-wrapper2 li{
+	list-style-type: none;
+	
+}
+
+.ticket-road-outgoing h3, .ticket-road-return h3{	
+	font-size: 25px;
+}
+.ticket-wrapper2  i{
+	transform: rotate(140deg);
+	font-size: 60px;
+	padding: 1rem;
+	
+}
+.ticket-price-outgoing, .ticket-price-return{
+	width: 100%;
+	height: 20%;
+	text-align: center;
+	padding: 1rem;
+	border-top:  4px groove hsl(0, 0%, 80%);
+}
+@media(min-width: 650px){
+	.ticket-wrapper2{
+			position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	}
+}
+@media(max-width: 850px){
+	
+ .shadow-ticket, .ticket-wrapper{
+	
+	overflow-y: scroll;
+    overflow-x: hidden;
+	 
+}
+	.ticket-wrapper2{
+		width: 800px;
+		height: 500px;
+	}
+	
+	
+	
+	
+	
+}
+@media(max-width: 650px){
+	
+	.ticket-wrapper2{
+		width: 100%;
+		height: 1100px;
+	}
+	
+	.tickets-airplane{
+		height: 95%;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		flex-direction: column;
+		align-items: center;
+	}
+	.ticket-name-outgoing, .ticket-name-return{
+		width: 80%;
+	}
+	.button-save, .button-delete{
+		width: 50%;
+		height: 4%;
+	}
+	
+	.ticket-outgoing, .ticket-return{
+		width: 90%;
+		height: 40%;
+	}
+	.circle-shadow{
+		height: 1200px;
+		
+	}
+	.circle-animation{
+		
+		top: 30%;
+		left: 50%;
+		
+	}
+	.circle-right, .circle-left {
+	/*border: red solid 15px;*/
+	  
+}
+}
+
+
+
+
+
   /*//////////////////////////////////////////////////////////////////////////main/////////////////////////////////////////////////////////////////*/
 .main{
 	width: 100%;
 	background-image: url(assets/world2.jpg);
-	
 	background-repeat:  no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
@@ -326,11 +869,7 @@ width: 100%;
 	
 	
 }
-.footer{
-	width: 100%;
-	height: 500px;
-	background: red;
-}
+
 .first-city-wrapper{
 	width: 90%;
 	height: 100%;
@@ -450,7 +989,7 @@ width: 100%;
 	background: hsla(0, 0%, 10%, 0.9);
 	border-radius: 10px;
 	padding: 15px;
-	z-index: 2;
+   z-index: 2;
 }
 .next-button button{
 	left: 10%;
@@ -462,7 +1001,472 @@ width: 100%;
 .load-more{
 	display: none;
 }
+/*====================================================================Other==================================================*/
+.others{
+	width: 100%;
+	height: 600px;
+	background:  hsla(220, 100%, 15%);
+	
+}
+.other-wrapper{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	
+	
+}
 
+
+.rent, .booking, .parking, .special-offers, .gift{
+	width: 350px;
+	height: 250px;
+	cursor: pointer;
+	position: relative;
+	box-shadow: 0px 0px 100px hsla(0, 0%, 10%, 0.4);
+	overflow: hidden;
+}
+
+.rent img, .booking img, .parking img, .special-offers img, .gift img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: .50s ease-in;
+	
+}
+.other-images-hover{
+	transform: scale(1.3);
+	transition: .50s ease-in;
+}
+.rent h3, .booking h3, .parking h3, .special-offers h3, .gift h3{
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 0.5rem;
+	font-size: 20px;
+	background: hsl(0, 0%, 80%);
+	
+}
+.more-informations{
+	width: 100%;
+	height: 20%;
+	text-align: center;
+	background: hsl(24, 100%, 50%);
+	position: absolute;
+	bottom: 20%;
+	right: 0;
+	transition: 0.1s ease-out;
+	opacity: 0;
+	
+	
+}
+
+.more2{
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem;
+	color: hsl(0, 0%, 95%);
+	font-size: 20px;
+	text-shadow: 2px 2px 2px hsl(0, 0%, 25%);
+	background: hsla(0, 100%, 70%, 0.7);
+	
+}
+.more-informations-animation{
+	bottom: 0%;
+	opacity: 1;
+	transition: 0.2s ease-in;
+}
+.recomandation{
+	width: 100%;
+	height: 600px;
+	background:  hsla(220, 100%, 15%);
+	position: relative;
+}
+.title-recomandation{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	color: hsl(0, 0%, 75%);
+	left: 50%;
+	top: 5%;
+	font-size: 30px;
+}
+.image-jerusalem > .shadow-picture, .image-berlin > .shadow-picture{
+	background: hsla(0, 0%, 10%, 0.8);
+	transition: 0.2s ease-in;
+	border: none;
+}
+.shadow-picture-recomandation{
+	width: 100%;
+	height: 100%;
+	background: hsla(0, 0%, 10%, 0.8);
+	transition: 0.2s ease-in;
+}
+.recomandation-images{
+	width: 550px;
+	height: 350px;
+	position: absolute;
+
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+
+.image-berlin, .image-jerusalem{
+	width: 50%;
+	height: 100%;
+	background-repeat:  no-repeat;
+	 background-position: center;
+	 background-size: 100% 100%;
+	float: left;
+}
+.image-berlin{
+	background-image: url(assets/berlin.jpg);
+	
+}
+.image-jerusalem{
+	
+	background-image: url(assets/jerusalem.jpg);
+	
+}
+
+
+.img1, .img2{
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-repeat:  no-repeat;
+	 background-position: center;
+	 background-size: 100% 100%;
+	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	cursor: pointer;
+	transition: 0.2s ease-in;
+}
+.img1{
+	transform: rotate(-20deg);
+	background-image: url(assets/berlin.jpg);
+	
+}
+.img2{
+transform: rotate(20deg);	
+	background-image: url(assets/jerusalem.jpg);
+	
+}
+.img-title{
+	color: hsl(0, 0%, 75%);
+	font-size: 2rem;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	
+}
+.h4-opacity{
+	opacity: 1;
+	transition: 0.2s ease-in;
+}
+
+.footer{
+	width: 100%;
+	height: 300px;
+	background-image: url(assets/world2.jpg);
+	background-repeat:  no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+.footer > .shadow-picture{
+	background: hsla(0, 0%, 25%, 0.8);
+}
+.footer-container{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.fly-destinations, .services, .about-WT, .follow-us{
+	width: 300px;
+	
+	
+	float: left;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	padding: 10px;
+	margin-top: 0.5rem;
+	
+}
+.fly-destinations h4, .services h4, .about-WT h4{
+	padding: 10px;
+}
+.hr{
+	
+	width:  80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	height: 3px;
+	background: white;
+}
+.fly-destinations p, .services p, .about-WT p {
+	padding: 10px;
+}
+.follow-us{
+	height: 250px;
+}
+.follow-us1{
+	width: 60%;
+	height: 100%;
+	
+	float: left;
+	text-align: center;
+	padding-top: 40%;
+	border-right: 3px solid white;
+}
+.follow-us2{
+	width: 40%;
+	height: 100%;
+	padding: 20px;
+	float: left;
+}
+.follow-us2 img{
+	width: 40px;
+	height: 40px;
+	display: block;
+	margin: 30px;
+	animation: imgAnimation 2s linear ; 
+	animation-iteration-count: infinite;
+}
+@keyframes  imgAnimation {
+	0%{ transform: scale(1)}
+	50% { transform: scale(1.2)}
+	100% { transform: scale(1)}
+}
+@media(max-width: 1000px){
+	.footer{
+		height: 700px;
+	}
+	.footer-container{
+		max-width: 80%;
+		flex-wrap: wrap;
+	}
+	.fly-destinations, .services, .about-WT, .follow-us{
+	width: 50%;
+}
+}
+@media(max-width: 600px){
+	.footer{
+		height: 1000px;
+	}
+	.footer-container{
+		width: 90%;
+		flex-wrap: wrap;
+	}
+	.fly-destinations, .services, .about-WT, .follow-us{
+	width: 100%;
+		
+}
+	.follow-us {
+		
+		height: 150px;
+		
+	}
+	.follow-us1{
+		width: 100%;
+		height: 30% ;
+		border-right: none;
+		border-bottom: 3px solid white;
+		
+		float: none;
+		padding-top: 0;
+		line-height: 15px;
+	}
+	
+	.follow-us2{
+		width: 100%;
+		height: 70%;
+		padding: 0;
+	}
+	.follow-us2 img {
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		margin: 20px;
+		
+		
+	}
+	
+}
+
+
+@media(max-width: 1100px){
+	.rent, .booking, .parking, .special-offers, .gift{
+	width: 250px;
+	height: 200px;
+	}
+}
+@media(min-width: 700px){
+	.rent-absolute{
+	position: absolute;
+	top: 2%;
+	left: 2%;
+}
+.booking-absolute{
+	position: absolute;
+	bottom: 2%;
+	left: 2%;
+}
+.parking-absolute{
+	position: absolute;
+	top: 2%;
+	right: 2%;
+}
+.special-offers-absolute{
+	position: absolute;
+	bottom: 2%;
+	right: 2%;
+}
+.gift-absolute{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+	
+}
+@media(max-width: 700px){
+	
+	.others{
+		height: auto;
+		
+	}
+	
+	.other-wrapper{
+	display: flex;
+	flex-direction: row;
+		flex-wrap: wrap;
+	justify-content: space-around;
+	}
+
+	.rent, .booking, .parking, .special-offers, .gift{
+	width: 70%;
+	height: 300px;
+	
+	margin: 1rem;
+	}
+	.button-list{
+		width: 0;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		background: hsla(220, 100%, 15%);
+		z-index: 3;
+		overflow: hidden;
+		
+		transition: width 0.2s;
+		
+	}
+	.content-bar-black{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background:  hsla(0, 0%, 25%, 0.8);
+		z-index: 3;
+		display: none;
+		overflow: hidden;
+		
+	}
+	.close-wrapper{
+		width: 40px;
+		float: left;
+		margin: 0.5rem;
+		padding: 0.1rem;
+		background:  hsla(220, 100%, 15%);
+		box-shadow: 0px 0px 10px hsla(0, 0%, 10%, 0.4);
+		
+	}
+	.close{
+		
+		
+		font-size: 35px;
+		color: hsl(0, 100%, 80%);
+		
+		display: block;
+	}
+	.button-list-width{
+		width: 150px;
+		transition: width 0.2s;
+		
+	}
+	.button-list button{
+		float: none;
+		width: 100%;
+		height: auto;
+		font-size: 15px;
+		padding: 0.5rem;
+		
+	}
+	
+	.content-bar{
+		display: block;
+		float: right;
+		margin: 1rem;
+	}
+	
+		.bar1, .bar2, .bar3{
+	width: 40px;
+     height: 4px;
+    background-color: black;
+    margin: 6px 0px;
+	margin-left: 0.5rem;
+	
+	
+}
+	.recomandation{
+		height: 300px;
+		
+	}
+	
+	.recomandation-images{
+		width: 350px;
+		height: 150px;
+	}
+	.title-recomandation{
+		font-size: 15px;
+	}
+	
+}
+@media(max-width: 420px){
+	.recomandation{
+		height: 200px;
+		
+	}
+	
+	.recomandation-images{
+		width: 200px;
+		height: 100px;
+	}
+	.img-title{
+		font-size: 0.7rem;
+	}
+	
+}
+@media(max-width: 500px){
+	.rent, .booking, .parking, .special-offers, .gift{
+	width: 90%;
+	height: 250px;
+}
+}
 
 
 
@@ -557,6 +1561,7 @@ width: 100%;
 }
 
 @media(max-width: 800px){
+	
 	.airplane-list{
 		 width:  500px;
 		height: 250px;
@@ -577,7 +1582,9 @@ width: 100%;
 }
 
 @media(max-width: 600px){
-	
+	.slider-container{
+		display: none;
+	}
 	.airplane-list{
 		width: 95%;
 		height: 400px;
@@ -587,7 +1594,13 @@ width: 100%;
 		display: none;
 	}
 	.title-container{
-		height: 50px;
+		height: 5rem;
+		
+	}
+	.logo{
+		height: 50%;
+		width: 200px;
+		margin-top: 0.5rem;
 		
 	}
 	

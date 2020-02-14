@@ -5,30 +5,69 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">	
-<!---<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">	--->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">	
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
 <link rel="stylesheet" href="/resources/demos/style.css">
-  <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->	
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="script.js"></script>
-<script src="script3.js"></script>	
 
+ <!--<script src="script3.js"></script>-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 </head>
-	<script>
-</script>
+	
 <body>
  
-  <div id = "header">
+  
+ 
+	 
+	
+	
+	<div id = "header">
 	
 	<div class="shadow-picture ">
 	  <div class="title-container">
+		  
 		  <img src="assets/logo.png" alt="logo" class="logo">
-		 
+		
+		     <div class="content-bar">
+	            <div class="bar1"></div> 
+	            <div class="bar2"></div>
+	            <div class="bar3"></div> 
+	         </div>
+		  <div class="content-bar-black">
+			 <div class="close-wrapper">
+			    <span class="close">&times;</span>
+			 </div>	 
+		  </div>   
+		  <div class="button-list">
+			 
+				 <button class="sign-in" onclick="myFunctionStorage()">Sign In</button>
+				 <button>Discover</button>
+				 <button>Contact Us</button>
+	             <button class="save"> <span class="span-one"></span>Ticket</button>
+			    
+		  </div>
 	  </div>
-	  
-	   <img src = "assets/airplane.png" alt="airplane" class="airplane">
+	  <div class="slider-container">
+		
+		  <img src="assets/new-york.jpg" alt="New-York" class="img-header1 img-block">
+		  <img src="assets/tokyo.jpg" alt="Tokyo" class="img-header2">
+		  <img src="assets/madrid.jpg" alt="Madrid" class="img-header3">
+		  <img src="assets/munich.jpg" alt="Munich" class="img-header4">
+		 <div class="shadow-picture-slider"></div>
+		 <div class="shadow-picture-slider2"></div> 
+		  <!--<a class="prev-header" >&#10094;</a>
+		  <i class="fa fa-plane prev-header"></i>
+          <a class="next-header" >&#10095;</a>-->
+		   <!--<div class="prev-button">--->
+		  <button class="prev-header">&#10094;</button>
+		  <button class="next-header">&#10095;</button>
+				  
+	  </div>
+	 
 	    <div class="airplane-list">
 		<div class="shadow-picture2">
 	    <div class="cities-choose">
@@ -39,14 +78,28 @@
 			   <li>Barcelona</li>
 			   <li>Madrid</li>
 			   <li>Munich</li>
-				<li id="no-result">No result found</li>
+			   <li>Tokyo</li>
+				<li>Ankara</li>
+				<li>Cairo</li>
+				<li>Dubai</li>
+				<li>Erevan</li>
+				<li>G</li>
+				<li>F</li>
+				<li>Havanna</li>
+				<li>Johannesburg</li>
+				<li>Lisbon</li>
+				<li>Rome</li>
+				<li>Prague</li>
+				<li id="no-result" class="no-result">No result found</li>
 		    </ul>
+			
+		 
 		</div>
 		
 			
 		<div class="date-choose">
-			 <input id="datepicker" type = "button" value ="Outgoing" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Outgoing'">
-			  <input id="datepicker2" type = "button" value ="Return" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return'">
+			 <input id="datepicker" class="outgoing" type = "button" value ="Outgoing" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Outgoing'">
+			  <input id="datepicker2" class="return" type = "button" value ="Return" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Return'">
 			
 		</div>
 		<div class="passenger-search">
@@ -67,12 +120,20 @@
 				</div>
 				
 			</div>
-			<div class="search">
+			<div class="search" >
 				<p class="search-p">Search</p>
 			</div>
 		    
 		</div>
-	    
+		<div class="wrong-cities">
+			
+			
+			<p class="same-cities">Your must choose different cities</p>
+			<p class="no-city">We didn't find this city</p>
+			<p class="no-valid">The date is not valid</p>
+			<button class="close-cities">Close</button>
+			
+	    </div>
 		
   	 </div>
 		</div>
@@ -109,7 +170,12 @@
 			<button class="ok">OK</button>
 	    </div> 
 	</div>
-	</div>
+	
+		
+</div>
+ 
+	 
+	
 	<div class="main">
 	<div class="shadow-picture shadow-flex  ">
 	<div class="prev-button">
@@ -137,15 +203,237 @@
 		<p class="load">Load More</p>
 		<p class="hide">Hide</p>
 	</div>
-	<!---<div class="footer"></div>--->
+	<div class="others">
+	   <div class="shadow-picture">
+		   <div class="other-wrapper">
+		    <div class="rent rent-absolute">
+				<img src="assets/audi.jpg" alt="audi">
+				<h3>Rent a Car</h3>	
+				<div class="more-informations">
+					<div class="more2">
+					<h4>More Informations</h4>
+					</div>
+				</div>
+		   </div>
+		   <div class="booking booking-absolute">
+				<img src="assets/hotel-room.jpg" alt="hotel">
+				<h3>Booking a room</h3>
+			    <div class="more-informations">
+					<div class="more2">
+					<h4>More Informations</h4>
+					</div>
+				</div>
+		   </div>
+		   <div class="parking parking-absolute">
+				<img src="assets/parking.jpg" alt="parking">
+				<h3>Airport Parking</h3>
+			    <div class="more-informations">
+					<div class="more2">
+					<h4>More Informations</h4>
+					</div>
+				</div>
+			 </div>   				
+		   <div class="special-offers special-offers-absolute">
+				<img src="assets/Sofia.jpg" alt="Sofia">
+				<h3>Special Offers</h3>	
+			   <div class="more-informations">
+					<div class="more2">
+					<h4>More Informations</h4>
+					</div>
+				</div>
+		   </div>
+		    <div class="gift gift-absolute">
+				<img src="assets/gift.jpg" alt="gift">
+				<h3>Vouchers</h3>
+				<div class="more-informations">
+					<div class="more2">
+					<h4>More Informations</h4>
+					</div>
+				</div>
+		   </div>
+		   </div>
+	   </div>
+	</div>
+	<div class="recomandation">
+		 
+		
+			
+            <div class="image-berlin">
+				<div class="shadow-picture">
+					
+				</div>
+			 </div>
+		    <div class="image-jerusalem">
+				<div class="shadow-picture">
+				</div>
+			 </div>
+			 <div class="recomandation-images">
+			 <div class="img1">
+				 <div>
+				  <h4 class="img-title">Berlin</h4>
+				</div>	 
+				 </div>
+			 <div class="img2">
+				 <div> 
+				 <h4 class="img-title">Jerusalim</h4>
+				 </div>
+				 </div>
+			</div> 
+		<h4 class="title-recomandation">Our recomandations</h4>
+	</div>
+	<div class="ticket-wrapper">
+		
+
+		 <div class="shadow-picture shadow-ticket">
+		  
+		<div class="ticket-wrapper2 ">
+			
+			<div class="tickets-airplane">
+		     <div class="ticket-outgoing">
+				 <div class="ticket-name-outgoing">
+						  <h4>Ticket-Outgoing</h4>
+						  
+					 </div>
+				 <div class="ticket-outgoing-details">
+				 <div class="ticket-date-outgoing">
+					 <div class="date-outgoing">
+						 <span>(date)</span> 
+						 <h3 class="do"></h3>
+						
+					 </div>
+					  <div class="hour-outgoing">
+						   <span>(hour)</span>
+						  <h3>19:30</h3>
+					 </div>
+				 </div>
+				 <div class="ticket-road-outgoing">
+					 <ul class="xx">
+						 <li><span>(from)</span></li>
+						<li><h3 class="from-city"></h3></li> 
+						<li><i class="fa fa-plane"></i></li> 
+						<li><span>(to)</span></li>
+						<li><h3 class="to-city"></h3></li> 
+					 </ul>
+					
+				 </div>
+				 <div class="ticket-price-outgoing">
+					 <span>(Price)</span>
+					 <h3 class="price-ticket"></h3>
+					 
+				 </div>
+			    </div>
+		     </div>
+		     <div class="ticket-return">
+				 <div class="ticket-name-return">
+						  <h4>Ticket-Return</h4>
+						  
+					 </div>
+				 <div class="ticket-return-details">
+				 <div class="ticket-date-return">
+					 <div class="date-return">
+						  <span>(date)</span> 
+						 <h3  class="dr"></h3>
+					 </div>
+					  <div class="hour-return">
+						  <span>(hour)</span>
+						  <h3>19:30</h3>
+					 </div>
+				 </div>
+				 <div class="ticket-road-return">
+					 <ul class="xx">
+						 <li><span>(from)</span></li>
+						<li ><h3 class="to-city"></h3></li> 
+						<li><i class="fa fa-plane"></i></li> 
+						<li><span>(to)</span></li>
+						<li><h3 class="from-city"></h3></li> 
+					 </ul>
+				 </div>
+				  <div class="ticket-price-return">
+					 <span>(Price)</span>
+					 <h3 class="price-ticket"></h3>
+				 </div>
+		     </div>
+			 </div>
+			 </div>
+			
+			 <div class="button-save" >Save Ticket</div>
+			 </div>
+			  
+		    <div class="circle-shadow">
+			   <div class="circle-animation">
+			   <div class="circle-left"></div>
+			   <div class="circle-right"></div>
+			 </div>
+		 </div>
+       </div>
+		 
+	 </div>
+	 <div class="ticket-wrapper-storage">
+		
+
+		 <div class="shadow-picture shadow-ticket ">
+		  <div class="back"><i class="fa fa-arrow-circle-left"></i></div>
+		<div class="ticket-wrapper2">
+		
+			<div class="no-ticket">You don't have a ticket saved</div>
+			<div class="tickets-airplane">	</div>
+			<div class="button-delete"></div>
+			
+       </div>
+		 </div>
+	 </div>
+	<div class="footer">
+		<div class="shadow-picture">
+		     <div class="footer-container">
+			  <div class="fly-destinations">
+				  
+				  <h4>Fly and Destinations</h4> 
+				  <div class="hr"></div>
+				  <p>Map</p>
+				  <p>Destinations</p>
+				  <p>Travel program</p>
+				  <p>Informations about cancellation</p>
+			</div>
+			 <div class="services">
+				  
+				  <h4>Services</h4> 
+				  <div class="hr"></div>
+				  <p></p>
+				  <p>Hotels</p>
+				  <p>Rent Cars</p>
+				  <p>World Travel Discount Club</p>
+			</div>	
+			 <div class="about-WT">
+				  
+				  <h4>About World Travel</h4> 
+				  <div class="hr"></div>
+				  <p></p>
+				  <p>Informations about company</p>
+				  <p>News</p>
+				  <p>World Travel Magazine</p>
+			</div>	
+			<div class="follow-us">
+				<div class="follow-us1">
+				<h4 class="f-abs">Follow Us</h4>
+			    </div>
+				<div class="follow-us2">
+					 <img src="assets/facebook.png" alt="png">
+					 <img src="assets/instagram.png" alt="png"> 
+					 <img src="assets/linkedin.png" alt="png">
+				</div>
+			</div>	
+			</div>
+		</div>
+	</div>
   <script src="script2.js"></script>	
-  <script src="script3.js"></script>	
+ <script src="script3.js"></script>	
+  <script src="script4.js"></script>	
 </body>
 <script>
 	window.addEventListener('load', function () {
      document.getElementsByClassName("airplane")[0].classList.add("airplane2");
 		
-})
+});
 $( function() {
     $( "#datepicker, #datepicker2" ).datepicker();
   } ); 	
