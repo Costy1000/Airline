@@ -470,7 +470,7 @@ $(".minus-baby").click(function(){
 		$(".button-list").removeClass("button-list-width");
 		//$(".close-wrapper").css({"display": "none"});*/
 		$(".content-bar-black").css({"display": "none"});
-		
+		$("body").css({overflow: "hidden"});
 		tk.html(localStorage.getItem('aa'));
 		
 	    
@@ -478,7 +478,7 @@ $(".minus-baby").click(function(){
 	});
 	$(".back").click(function(){
 		$(".ticket-wrapper-storage").css({"display": "none"}); 
-
+        $("body").css({overflow: "auto"});
 		//$(".no-ticket").css({"display": "block"});
 		
 	
@@ -488,7 +488,9 @@ $(".minus-baby").click(function(){
 		$(".ticket-wrapper-storage").css({"display": "none"});
 		  localStorage.removeItem('aa', j.html());
 		  $(this).css({"display": "none"});
+		
 		  buttonDelete.css({"display": "none"});
+		 $("body").css({overflow: "auto"});
 		  localStorage.removeItem('bb', buttonDelete.html());
 		
 		noTicket.css({"display": "block"});

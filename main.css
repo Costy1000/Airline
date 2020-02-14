@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Open Sans', sans-serif;
+	
+	font-family: 'Rubik', sans-serif;
 }
 body{
 	width: 100%;
@@ -20,7 +21,8 @@ width: 100%;
 	background-repeat:  no-repeat;
 	 background-position: center;
 	 background-size: 100% 100%;
-
+	
+  
 	
 }
 #header, .shadow-picture, .shadow-picture2, .title-container, .cities-choose, .date-choose, .passenger-left{
@@ -37,7 +39,7 @@ width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: transparent
+	background: transparent;
 	
 	
 }
@@ -102,7 +104,7 @@ width: 100%;
 	outline: none;
 	cursor: pointer;
 	font-size: 18px;
-	font-family: 'Alata', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	color: hsl(0, 0%, 85%);
 	text-shadow: 2px 2px black;
 }
@@ -116,7 +118,7 @@ width: 100%;
 }
 .slider-container{
 	width: 100%;
-	height: 90%;
+	height: 530px;
 	
 	position: relative;
 	top: 0;
@@ -151,18 +153,18 @@ width: 100%;
 	from{ background: hsla(0, 0%, 0%, 0.8);}
 	to { background: transparent;}
 }
-/*@-o-keyframes bb {
-	from{ background: black;}
+@-o-keyframes shadowSlider {
+	from{ background: hsla(0, 0%, 0%, 0.8);}
 	to { background: transparent;}
 }
-@-moz-keyframes  bb {
-	from{ background: black;}
+@-moz-keyframes  shadowSlider {
+	from{ background: hsla(0, 0%, 0%, 0.8);}
 	to { background: transparent;}
 }
-@-webkit-keyframes  bb {
-	from{ background: black;}
+@-webkit-keyframes shadowSlider   {
+	from{ background: hsla(0, 0%, 0%, 0.8);}
 	to { background: transparent;}
-}*/
+}
 .img-block{
 	display: block !important;
 }
@@ -376,7 +378,7 @@ width: 100%;
 }
 
 .search{
-	background: hsla(150, 100%, 35%, 0.7);
+	background: hsla(120, 50%, 40%, 0.7);
 	float: right;
 	display: flex;
 	align-items: center;
@@ -616,7 +618,7 @@ width: 100%;
 	background-repeat:  no-repeat;
 	 background-position: center;
 	 background-size: 100% 100%;
-    
+   
 	display: none;
 	position: fixed;
 	top: 0;
@@ -786,7 +788,7 @@ width: 100%;
 }
 @media(max-width: 850px){
 	
- .shadow-ticket, .ticket-wrapper{
+ .shadow-ticket, .ticket-wrapper, .ticket-wrapper-storage{
 	
 	overflow-y: scroll;
     overflow-x: hidden;
@@ -855,6 +857,7 @@ width: 100%;
 	background-repeat:  no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
+	
 }
 
 
@@ -957,6 +960,7 @@ width: 100%;
 .price{
     float: right;
 	font-size: 1.2rem;
+	color: hsl(120, 50%, 35%);
 }
 
 .prev-button, .next-button{
@@ -1005,8 +1009,14 @@ width: 100%;
 .others{
 	width: 100%;
 	height: 600px;
-	background:  hsla(220, 100%, 15%);
+	background-image: url(assets/airport.jpg);
+	background-repeat:  no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 	
+}
+.others > .shadow-picture{
+	background: hsla(0, 0%, 25%, 0.9);
 }
 .other-wrapper{
 	width: 100%;
@@ -1083,7 +1093,7 @@ width: 100%;
 .recomandation{
 	width: 100%;
 	height: 600px;
-	background:  hsla(220, 100%, 15%);
+	
 	position: relative;
 }
 .title-recomandation{
@@ -1193,13 +1203,16 @@ transform: rotate(20deg);
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
+.footer p, .footer h4,  .others h3, .other{
+	font-family: 'Rubik', sans-serif;
+}
 .fly-destinations, .services, .about-WT, .follow-us{
 	width: 300px;
 	
 	
 	float: left;
 	text-align: center;
-	color: white;
+	color: hsl(0, 0%, 85%);
 	font-size: 20px;
 	padding: 10px;
 	margin-top: 0.5rem;
@@ -1214,7 +1227,7 @@ transform: rotate(20deg);
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	height: 3px;
+	height: 2px;
 	background: white;
 }
 .fly-destinations p, .services p, .about-WT p {
@@ -1230,7 +1243,7 @@ transform: rotate(20deg);
 	float: left;
 	text-align: center;
 	padding-top: 40%;
-	border-right: 3px solid white;
+	border-right: 2px solid white;
 }
 .follow-us2{
 	width: 40%;
@@ -1242,7 +1255,7 @@ transform: rotate(20deg);
 	width: 40px;
 	height: 40px;
 	display: block;
-	margin: 30px;
+	margin: 20px;
 	animation: imgAnimation 2s linear ; 
 	animation-iteration-count: infinite;
 }
@@ -1284,7 +1297,7 @@ transform: rotate(20deg);
 		width: 100%;
 		height: 30% ;
 		border-right: none;
-		border-bottom: 3px solid white;
+		border-bottom: 2px solid white;
 		
 		float: none;
 		padding-top: 0;
@@ -1671,6 +1684,15 @@ transform: rotate(20deg);
 		width: 20px;
 		height: 20px;
 	}
+	.back{
+		padding: 5px;
+	}
+	.back i{
+		font-size: 20px;
+	}
+	.no-ticket{
+		width: 80%;
+	}
 	.first-city-wrapper{
 	width: 99%;
 	
@@ -1678,8 +1700,11 @@ transform: rotate(20deg);
 	
 	}
 	.prev-button, .next-button{
-		width: 0.5%;
+		width: 1%;
 		background: transparent;
+	}
+	.prev-button button, .next-button button{
+		padding: 10px;
 	}
 	.city-img-wrapper{
 	
@@ -1694,6 +1719,7 @@ transform: rotate(20deg);
 	.city-wrapper{
 		height: 200px;
 	}
+	
 	
 
 
