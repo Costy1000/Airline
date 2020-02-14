@@ -1203,9 +1203,11 @@ transform: rotate(20deg);
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
-.footer p, .footer h4,  .others h3, .other{
-	font-family: 'Rubik', sans-serif;
+.footer p, .follow-us2 img{
+	cursor: pointer;
+	
 }
+
 .fly-destinations, .services, .about-WT, .follow-us{
 	width: 300px;
 	
