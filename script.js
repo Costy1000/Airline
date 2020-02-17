@@ -484,7 +484,7 @@ $(".minus-baby").click(function(){
 	});
 	 
 	$(".button-save").click(function(){
-		  $("ticket-wrapper").css({display: "none"});
+		  $(".ticket-wrapper").css({display: "none"});
 		  $("body").css({overflow: "auto"});
 		  spanOne.text("1");
 		 spanOne.css({"display": "block"});
