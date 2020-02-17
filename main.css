@@ -153,18 +153,18 @@ width: 100%;
 	from{ background: hsla(0, 0%, 0%, 0.8);}
 	to { background: transparent;}
 }
-@-o-keyframes shadowSlider {
-	from{ background: hsla(0, 0%, 0%, 0.8);}
+/*@-o-keyframes bb {
+	from{ background: black;}
 	to { background: transparent;}
 }
-@-moz-keyframes  shadowSlider {
-	from{ background: hsla(0, 0%, 0%, 0.8);}
+@-moz-keyframes  bb {
+	from{ background: black;}
 	to { background: transparent;}
 }
-@-webkit-keyframes shadowSlider   {
-	from{ background: hsla(0, 0%, 0%, 0.8);}
+@-webkit-keyframes  bb {
+	from{ background: black;}
 	to { background: transparent;}
-}
+}*/
 .img-block{
 	display: block !important;
 }
@@ -693,7 +693,6 @@ width: 100%;
 	cursor: pointer !important;
 	outline: none;
 	border: none;
-	z-index: 2;
 }
 .ticket-wrapper > .button-save{
 	cursor: pointer !important;
@@ -1205,18 +1204,17 @@ transform: rotate(20deg);
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
-.footer p, .follow-us2 img{
-	cursor: pointer;
-	
+.footer p, .footer h4,  .others h3, .other{
+	font-family: 'Rubik', sans-serif;
+	color: hsl(0, 0%, 85%);
 }
-
 .fly-destinations, .services, .about-WT, .follow-us{
 	width: 300px;
 	
 	
 	float: left;
 	text-align: center;
-	color: hsl(0, 0%, 85%);
+	color: white;
 	font-size: 20px;
 	padding: 10px;
 	margin-top: 0.5rem;
@@ -1231,7 +1229,7 @@ transform: rotate(20deg);
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	height: 2px;
+	height: 1px;
 	background: white;
 }
 .fly-destinations p, .services p, .about-WT p {
@@ -1247,7 +1245,7 @@ transform: rotate(20deg);
 	float: left;
 	text-align: center;
 	padding-top: 40%;
-	border-right: 2px solid white;
+	border-right: 1px solid white;
 }
 .follow-us2{
 	width: 40%;
@@ -1301,7 +1299,7 @@ transform: rotate(20deg);
 		width: 100%;
 		height: 30% ;
 		border-right: none;
-		border-bottom: 2px solid white;
+		border-bottom: 3px solid white;
 		
 		float: none;
 		padding-top: 0;
@@ -1545,7 +1543,13 @@ transform: rotate(20deg);
 		display: flex;
 		flex-direction: row;
 	}
-	
+	/*.prev-button button, .next-button button{
+		position: fixed;
+		
+	}*/
+	/*.next-button button{
+		right: 0;
+	}*/
 	.load, .hide{
 		
 		height: 100%;

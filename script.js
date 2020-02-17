@@ -2,6 +2,11 @@ $(document).ready(function(){
 	///////////////////////////////////////////////////////////////HEADER-SLIDER//////////////////////////////////////////////////////////////////////
 	
 	
+	
+	
+	
+	
+	
 	var array = [".img-header1", ".img-header2", ".img-header3", ".img-header4"];
 	var i = 0;
 	var x;
@@ -69,7 +74,22 @@ $(".close").click(function(){
 	  $(".button-list").removeClass("button-list-width");
 	  $(".content-bar-black").css({"display": "none"});	
 });	
+  var location = $(".location");
+	//for(var i = 0; i< $(".location").length; i++){
+	//for(var i = 0; i< 3; i++){
+    var arraycities = [];
+		//var arraycitiesTo = [];
 	
+		$(".location").filter(function() {
+			arraycities.push($(this).text());
+			
+		})
+	
+	for(var i = 0; i< arraycities.length; i++){
+     $(".cities-list").append("<li>" +  arraycities[i]  + "</li>");
+ }
+	 $(".cities-list").append("<li id='no-result' class='no-result'>No result found</li>");
+	//}
 	////////////////////////////////////////////////////////////////////////FROM-TO//////////////////////////////////////////////////////////
 	$(".from, .to").on("keyup", function() {
     var value = $(this).val().toLowerCase();
@@ -300,13 +320,13 @@ $(".minus-baby").click(function(){
 		   $(".return").removeClass("return2");
 	  }*/
   })
-	var arraycities = [];
-		//var arraycitiesTo = [];
+	/*var arraycities = [];
+		
 	
 		$(".cities-list li").filter(function() {
 			arraycities.push($(this).text());
 			
-		})
+		})*/
 	////////////////////////////////////////////////////////////////////////localStorage/////////////////////////////////////////////////////////
 	
 	 var j = $(".tickets-airplane");
@@ -328,20 +348,54 @@ $(".minus-baby").click(function(){
 	//nt.html(localStorage.getItem('cc'));
 		spanOne.html(localStorage.getItem('cc'));
 		
+	  
+	   
+	   var listCities  = [
+		   {city: "New York", hour: "20:30", price: 1000},
+		    {city: "Rome", hour: "21:30", price: 300},
+		   {city: "Prague", hour: "21:30", price: 250},
+		   {city: "Tokyo", hour: "19:30", price: 1200},
+		   {city: "Dublin", hour: "04:30", price: 700},
+		   {city: "Madrid", hour: "08:30", price: 400},
+		   {city: "Lisbon", hour: "10:30", price: 300},
+		   {city: "Munich", hour: "10:30", price: 500},
+		   {city: "London", hour: "14:30", price: 800},
+		   {city: "Istanbul", hour: "14:30", price: 700},
+		   {city: "Viena", hour: "14:30", price: 400},
+		    {city: "Rio", hour: "15:30", price: 550},
+		   {city: "Los-Angeles", hour: "18:30", price: 1400},
+		   {city: "Amsterdam", hour: "19:30", price: 600},
+		  
+		   {city: "Budapest", hour: "22:30", price: 200},
+		   {city: "Chicago", hour: "23:30", price: 1300},
+		   {city: "Sydney", hour: "11:30", price: 2000},
+		    {city: "Cairo", hour: "09:30", price: 900},
+	   ];
+	
+		   
 	   
 		
 	
 	
 	$(".search").click(function(){
 		
-		//for(var i = 0; i< arraycities.length; i++){
+	
 		var from = $(".from");
 		var to = $(".to");
 		var outgoing = $(".outgoing");
 		var returnv = $(".return");
+		
 		var d = new Date();
 		 if (arraycities.indexOf(from.val())  > -1 && arraycities.indexOf(to.val())  > -1  ){
+			 $(".hour-city").text(listCities[arraycities.indexOf(from.val())].hour);
+			 var counterManTotal = 	CounterMan * listCities[arraycities.indexOf(from.val())].price ;
 			 
+		  var counterChildTotal = CounterChild * listCities[arraycities.indexOf(from.val())].price  / 2;	 
+		    var counterBabyTotal = CounterBaby  * listCities[arraycities.indexOf(from.val())].price / 5;		 
+	        var counterTotal =  counterManTotal  + counterChildTotal + counterBabyTotal;
+	  // var x = parseInt(counterTotal);
+		    var x = parseInt(counterTotal);
+			 $(".price-ticket").text(x + " $ ");
 			if($(".from").val()  != $(".to").val() && outgoing.val() != "Outgoing"  ){
 		if(outgoing.val()  < returnv.val()){
 		      
@@ -413,22 +467,24 @@ $(".minus-baby").click(function(){
 		$(".from-city").text(fromValue);
 		var toCity = $(".to").val();	 
 		$(".to-city").text(toCity);	 
-			 //////////////////////////////////////////////////////////////priceTicket//////////////////////////////////////
-		var counterManTotal = 	CounterMan * 1000;
-		var counterChildTotal = CounterChild * 500;	 
-		var counterBabyTotal = CounterBaby * 200;		 
-	    var counterTotal =  counterManTotal + counterChildTotal + counterBabyTotal;
-	   var x = parseInt(counterTotal);
 		
+			 //////////////////////////////////////////////////////////////priceTicket//////////////////////////////////////
+		//var priceTicket = $(".price-ticket").text();
+		//var counterManTotal = 	CounterMan * priceTicket ;
+		/*var counterChildTotal = CounterChild * 500;	 
+		var counterBabyTotal = CounterBaby * 200;		 
+	    var counterTotal =  counterManTotal + counterChildTotal + counterBabyTotal;*/
+	  // var x = parseInt(counterTotal);
+		//var x = parseInt(counterManTotal);
 	  
-		 $(".price-ticket").text(   x  + "$");
+		//$(".price-ticket").text(   x  + "$");
 	});
 	$(".close-cities").click(function(){
 		 $(this).parent().css({"display": "none"});
 	});
 	 
 	$(".button-save").click(function(){
-		  $(".ticket-wrapper").css({display: "none"});
+		  $("ticket-wrapper").css({display: "none"});
 		  $("body").css({overflow: "auto"});
 		  spanOne.text("1");
 		 spanOne.css({"display": "block"});
