@@ -650,6 +650,7 @@ width: 100%;
 	padding: 10px;
 		background:  hsla(0, 0%, 95%, 0.9);
 	box-shadow: 0px 0px 5px hsla(0, 0%, 10%);
+	cursor: pointer;
 }
 .back i{
 	font-size: 30px;
@@ -660,7 +661,7 @@ width: 100%;
 .ticket-wrapper2{
 	width: 900px;
 	height: 500px;
-	
+	z-index: 1;
 	
 	
 	
@@ -692,6 +693,7 @@ width: 100%;
 	cursor: pointer !important;
 	outline: none;
 	border: none;
+	z-index: 2;
 }
 .ticket-wrapper > .button-save{
 	cursor: pointer !important;
@@ -1203,9 +1205,11 @@ transform: rotate(20deg);
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
-.footer p, .footer h4,  .others h3, .other{
-	font-family: 'Rubik', sans-serif;
+.footer p, .follow-us2 img{
+	cursor: pointer;
+	
 }
+
 .fly-destinations, .services, .about-WT, .follow-us{
 	width: 300px;
 	
@@ -1541,13 +1545,7 @@ transform: rotate(20deg);
 		display: flex;
 		flex-direction: row;
 	}
-	/*.prev-button button, .next-button button{
-		position: fixed;
-		
-	}*/
-	/*.next-button button{
-		right: 0;
-	}*/
+	
 	.load, .hide{
 		
 		height: 100%;

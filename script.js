@@ -427,8 +427,8 @@ $(".minus-baby").click(function(){
 		 $(this).parent().css({"display": "none"});
 	});
 	 
-	$(".ticket-wrapper").click(function(){
-		  $(this).css({display: "none"});
+	$(".button-save").click(function(){
+		  $(".ticket-wrapper").css({display: "none"});
 		  $("body").css({overflow: "auto"});
 		  spanOne.text("1");
 		 spanOne.css({"display": "block"});
