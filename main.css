@@ -1234,6 +1234,7 @@ transform: rotate(20deg);
 }
 .fly-destinations p, .services p, .about-WT p {
 	padding: 10px;
+	cursor: pointer;
 }
 .follow-us{
 	height: 250px;
@@ -1260,6 +1261,7 @@ transform: rotate(20deg);
 	margin: 20px;
 	animation: imgAnimation 2s linear ; 
 	animation-iteration-count: infinite;
+	cursor: pointer;
 }
 @keyframes  imgAnimation {
 	0%{ transform: scale(1)}
